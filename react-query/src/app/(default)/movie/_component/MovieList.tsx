@@ -39,17 +39,22 @@ export default function MovieList() {
 
     return (
         <>
-            { data?.map((movie, idx) => (
-                <div key={ idx } className={ style.movieWrap }>
-                    <div className={ style.movieImg }>
-                        <img src={ faker.image.avatar() || '' } />
+            <div className={ style.container }>
+                { data?.map((movie, idx) => (
+                    <div key={ idx } className={ style.movieWrap }>
+                        <div className={ style.movieNum }>
+                            <h4>{ idx + 1 }</h4>
+                        </div>
+                        <div className={ style.movieImg }>
+                            <img src={ faker.image.avatar() || '' } />
+                        </div>
+                        <div className={ style.movieContent }>
+                            <p>영화 제목 : { movie.movieNm }</p>
+                            <p>개봉일 : { movie.openDt }</p>
+                        </div>
                     </div>
-                    <div className={ style.movieContent }>
-                        <p>영화 제목 : { movie.movieNm }</p>
-                        <p>개봉일 : { movie.openDt }</p>
-                    </div>
-                </div>
-            ))}
+                ))}
+            </div>
         </>
     )
 }

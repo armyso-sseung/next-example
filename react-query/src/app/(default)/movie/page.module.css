@@ -9,7 +9,7 @@
 
 .movieWrap {
     min-width: 550px;
-    min-height: 600px;
+    height: 600px;
     border-radius: 15px;
     background: #fff;
     padding: 15px 20px;
