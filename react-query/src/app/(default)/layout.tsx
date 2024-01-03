@@ -3,11 +3,12 @@ import style from "./layout.module.css"
 import RQProvider from "@/app/(default)/_component/RQProvider";
 
 
-export default function DefaultLayout({ children } :LayoutType) {
+export default function DefaultLayout({ children, modal } :LayoutType) {
     return (
         <main className={ style.container }>
             <RQProvider>
                 { children }
+                { modal }
             </RQProvider>
         </main>
     )

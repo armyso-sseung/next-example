@@ -8,9 +8,11 @@ import MovieList from "@/app/(default)/movie/_component/MovieList";
 
 export default async function MoviePage() {
     const queryClient = new QueryClient()
-    await queryClient.prefetchQuery({
+    // 무한 스크롤
+    await queryClient.prefetchInfiniteQuery({
         queryKey: ['movie', 'list'],
-        queryFn: getMovieList
+        queryFn: getMovieList,
+        initialPageParam: 0, // 초기 페이지 설정
     })
 
     const dehydratedState = dehydrate( queryClient )

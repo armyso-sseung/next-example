@@ -1,7 +1,13 @@
 import {revalidatePath, revalidateTag} from "next/cache";
 
-export default async function getMovieList() {
-    const res = await fetch('http://localhost:9090/movieList', {
+
+type Props = {
+    pageParam :number
+}
+
+
+export default async function getMovieList({ pageParam } :Props) {
+    const res = await fetch(`http://localhost:9090/movieList?_page=${ pageParam }&_limit=10`, {
         next: {
             tags: ['movie', 'list']
         },
