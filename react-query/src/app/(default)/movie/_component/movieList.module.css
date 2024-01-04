@@ -1,6 +1,6 @@
 .container {
     width: 100%;
-    height: 550px;
+    height: 500px;
     padding: 10px;
     overflow: auto;
 }
@@ -33,4 +33,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.orderSelect {
+    margin-bottom: 20px;
 }

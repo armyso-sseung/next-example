@@ -1,0 +1,13 @@
+.slideMenu {
+    width: 100dvw;
+    height: 100dvh;
+    position: absolute;
+    top: 0;
+    -webkit-transition: left .3s;
+    -moz-transition: left .3s;
+    -ms-transition: left .3s;
+    -o-transition: left .3s;
+    transition: left .3s;
+    background: #ccc;
+    color: #000
+}

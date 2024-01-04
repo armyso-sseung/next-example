@@ -1,12 +1,12 @@
 "use client"
 
 
-import {InfiniteData, useInfiniteQuery} from "@tanstack/react-query";
+import {InfiniteData, useInfiniteQuery, useQueryClient} from "@tanstack/react-query";
 import getMovieList from "@/app/(default)/movie/_lib/getMovieList";
 import {Movie} from "@/models/Movie";
 import style from "./movieList.module.css"
 import BaseLoading from "@/app/(default)/_component/BaseLoading";
-import {Fragment, useEffect} from "react";
+import {Fragment, useEffect, useState} from "react";
 import {useInView} from "react-intersection-observer";
 import {useRouter} from "next/navigation";
 import Link from "next/link";
@@ -14,6 +14,8 @@ import {faker} from "@faker-js/faker";
 
 
 export default function MovieList() {
+    const queryClient = useQueryClient()
+    const [ sortType, setSortType ] = useState("asc")
     const {
         data,
         isLoading,
@@ -22,8 +24,8 @@ export default function MovieList() {
         fetchNextPage,
         hasNextPage,
         isFetching, // 쿼리를 가져오고 있는지
-    } = useInfiniteQuery<Movie[], Object, InfiniteData<Movie[]>, [_1 :string, _2 :string], number>({
-        queryKey: ['movie', 'list'],
+    } = useInfiniteQuery<Movie[], Object, InfiniteData<Movie[]>, [_1 :string, _2 :string, _3 :string], number>({
+        queryKey: ['movie', 'list', sortType],
         queryFn: getMovieList,
         initialPageParam: 1,
         getNextPageParam: (lastPage, allPages) => lastPage.length > 0 ? allPages.length + 1 : undefined,
@@ -37,7 +39,7 @@ export default function MovieList() {
 
     const { ref, inView } = useInView({
         threshold: 0, // 하단 태그가 보이고 얼마의 픽셀이 보이고 나서 될건지 0이면 즉시,
-        delay: 0, // 태그가 보이고 얼마 후에 실행할건지
+        delay: 10, // 태그가 보이고 얼마 후에 실행할건지
     })
 
     useEffect(() => {
@@ -46,6 +48,9 @@ export default function MovieList() {
         }
     }, [ isFetching, hasNextPage, fetchNextPage, inView ])
 
+    useEffect(() => {
+        queryClient.getQueryData(['movie', 'list', sortType])
+    }, [ sortType ])
 
 
     if ( isLoading ) {
@@ -65,6 +70,10 @@ export default function MovieList() {
 
     return (
         <>
+            <select value={ sortType } name="order" id="order" className={ style.orderSelect } onChange={(e) => setSortType(e.target.value)}>
+                <option value="asc">ID 오름차순</option>
+                <option value="desc">ID 내림차순</option>
+            </select>
             <div className={ style.container }>
                 <>
                     { data?.pages.map((page, idx) => (
@@ -85,7 +94,7 @@ export default function MovieList() {
                             ))}
                         </Fragment>
                     ))}
-                    <div ref={ref} style={{ height: 5 }} />
+                    <div ref={ref} style={{ height: 1 }} />
                 </>
             </div>
         </>

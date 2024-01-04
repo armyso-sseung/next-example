@@ -1,21 +1,13 @@
-"use client"
-
-
 import style from "./navMenu.module.css";
+import Link from "next/link";
 
 
 const NavMenu = () => {
-    const handleClickMenu = () => {
-        // @ts-ignore
-        document.getElementById("slideMenu").style.left = 0
-    }
-
-
     return (
         <>
-            <div className={ style.menu } onClick={handleClickMenu}>
+            <Link className={ style.menu } href={'/slideMenu'}>
                 메뉴
-            </div>
+            </Link>
             <div className={ style.home }>
                 홈
             </div>
