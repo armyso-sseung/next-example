@@ -2,11 +2,22 @@
 
 
 import style from "./slideMenu.module.css"
-import {useRouter} from "next/navigation";
+import {usePathname, useRouter, useSelectedLayoutSegment} from "next/navigation";
+import Link from "next/link";
+import {useEffect} from "react";
 
 
 const SlideMenu = () => {
     const router = useRouter()
+    const pathName = usePathname()
+
+
+    useEffect(() => {
+        const slideMenu = document.getElementById("slideMenu") as HTMLElement
+        slideMenu.style.zIndex = pathName.includes("/slideMenu") ? "1" : "-1"
+    }, [ pathName ]);
+
+
     const handleClickCloseBtn = () => {
         router.back()
     }
@@ -23,7 +34,7 @@ const SlideMenu = () => {
                 </div>
             </div>
             <ul>
-                <li>메뉴1</li>
+                <Link href={"/dp/brand"}>메뉴1</Link>
                 <li>메뉴2</li>
                 <li>메뉴3</li>
             </ul>

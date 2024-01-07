@@ -8,7 +8,7 @@ import {useRouter} from "next/navigation";
 const Index = () => {
     const router = useRouter()
     useEffect(() => {
-        router.push('/DP')
+        router.push('/dp')
     }, [])
 
 

@@ -5,6 +5,13 @@
     position: relative;
 }
 
+.sideMenu {
+    position: absolute;
+    z-index: 1;
+}
+
+.content {}
+
 .nav {
     display: flex;
     justify-content: space-around;

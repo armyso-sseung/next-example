@@ -8,9 +8,9 @@ const NavMenu = () => {
             <Link className={ style.menu } href={'/slideMenu'}>
                 메뉴
             </Link>
-            <div className={ style.home }>
+            <Link className={ style.home } href={'/'}>
                 홈
-            </div>
+            </Link>
             <div className={ style.mypage }>
                 마이페이지
             </div>

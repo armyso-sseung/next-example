@@ -1,10 +1,10 @@
-import SlideMenu from "@/app/(default)/@sideMenu/slideMenu/_component/SlideMenu";
 import style from "./page.module.css"
+import SlideMenu from "@/app/(default)/@sideMenu/slideMenu/_component/SlideMenu";
 
 
 const SideMenuPage = () => {
     return (
-        <div id={"slideMenu"} className={ style.slideMenu }>
+        <div className={ style.slideMenu }>
             <SlideMenu />
         </div>
     )
