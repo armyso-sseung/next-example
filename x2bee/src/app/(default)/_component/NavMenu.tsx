@@ -5,7 +5,7 @@ import Link from "next/link";
 const NavMenu = () => {
     return (
         <>
-            <Link className={ style.menu } href={'/slideMenu'}>
+            <Link className={ style.menu } href={'/sideMenu'}>
                 메뉴
             </Link>
             <Link className={ style.home } href={'/'}>

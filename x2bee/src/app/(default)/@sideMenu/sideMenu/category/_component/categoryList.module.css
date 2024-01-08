@@ -1,0 +1,19 @@
+.container {
+    background: #fff;
+}
+
+.ctgWrap li {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0 0 20px;
+}
+
+.ctgList {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.ctgList span {
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
