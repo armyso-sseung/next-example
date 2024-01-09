@@ -4,6 +4,7 @@
 import {SideMenuHeaderType} from "../../../../../../model/SideMenuType";
 import style from "./sideMenuHeader.module.css";
 import {useRouter} from "next/navigation";
+import {CloseOutlined, HomeOutlined, LeftOutlined} from "@ant-design/icons";
 
 
 const SideMenuHeader = ({ title } :SideMenuHeaderType) => {
@@ -24,13 +25,13 @@ const SideMenuHeader = ({ title } :SideMenuHeaderType) => {
             <>
                 <div className={ style.header }>
                     <div className={ style.home } onClick={ handleClickBackBtn }>
-                        뒤로
+                        <LeftOutlined />
                     </div>
                     <div className={ style.title }>
                         { title }
                     </div>
                     <div className={ style.closeButton } onClick={ handleClickCloseBtn }>
-                        닫기
+                        <CloseOutlined />
                     </div>
                 </div>
             </>
@@ -40,10 +41,10 @@ const SideMenuHeader = ({ title } :SideMenuHeaderType) => {
             <>
                 <div className={ style.header }>
                     <div className={ style.home } onClick={ handleClickBackBtn }>
-                        홈
+                        <HomeOutlined />
                     </div>
                     <div className={ style.closeButton } onClick={ handleClickCloseBtn }>
-                        닫기
+                        <CloseOutlined />
                     </div>
                 </div>
             </>

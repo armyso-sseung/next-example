@@ -1,3 +1,20 @@
+.categoryTtile {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12pt;
+    cursor: pointer;
+}
+
+.openBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    width: 30px;
+    height: 100%;
+    font-size: 9pt;
+}
+
 .subWrap {
     display: none;
 }

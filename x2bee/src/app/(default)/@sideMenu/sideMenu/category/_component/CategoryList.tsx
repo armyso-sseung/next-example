@@ -5,6 +5,7 @@ import {useQuery} from "@tanstack/react-query";
 import {getSideMenuCategory} from "@/apis/common/sideMenuApi";
 import Category from "@/app/(default)/@sideMenu/sideMenu/category/_component/Category";
 import style from "./categoryList.module.css"
+import {useRouter} from "next/navigation";
 
 
 const CategoryList = () => {
