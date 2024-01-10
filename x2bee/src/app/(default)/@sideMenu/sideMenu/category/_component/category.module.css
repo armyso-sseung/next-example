@@ -18,3 +18,13 @@
 .subWrap {
     display: none;
 }
+
+.dispCtgRoute {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    width: 30px;
+    height: 100%;
+    font-size: 9pt;
+}

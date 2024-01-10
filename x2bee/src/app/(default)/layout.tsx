@@ -22,9 +22,7 @@ const DPLayout = ({ children, sideMenu } :PropsType) => {
                     { children }
                 </div>
 
-                <div className={ style.nav }>
-                    <NavMenu />
-                </div>
+                <NavMenu />
             </RQProvider>
         </main>
     )

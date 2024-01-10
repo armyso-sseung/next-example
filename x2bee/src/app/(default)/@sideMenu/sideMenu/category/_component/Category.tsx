@@ -2,7 +2,7 @@
 
 
 import style from "./category.module.css"
-import {DownOutlined, UpOutlined} from "@ant-design/icons";
+import {DownOutlined, RightOutlined, UpOutlined} from "@ant-design/icons";
 import {useCallback, useState} from "react";
 import {useRouter} from "next/navigation";
 
@@ -50,6 +50,7 @@ const Category = ({ category } :CategoryComponentType) => {
             <>
                 <div className={ style.categoryTtile } onClick={ moveToCategory }>
                     <span>{ category.dispCtgNm }</span>
+                    <span className={ style.dispCtgRoute }><RightOutlined /></span>
                 </div>
             </>
         )

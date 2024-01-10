@@ -14,7 +14,7 @@ const SlideMenu = () => {
                     카테고리
                     <span className={ style.moveBtn }><RightOutlined /></span>
                 </Link>
-                <Link href={"/sideMenu/brand"} className={ style.brandBtn }>
+                <Link href={"/"} className={ style.brandBtn }>
                     브랜드
                     <span className={ style.moveBtn }><RightOutlined /></span>
                 </Link>

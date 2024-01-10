@@ -1,20 +1,21 @@
 import style from "./navMenu.module.css";
 import Link from "next/link";
+import {HomeOutlined, MenuOutlined, UserOutlined} from "@ant-design/icons";
 
 
 const NavMenu = () => {
     return (
-        <>
+        <div className={ style.nav }>
             <Link className={ style.menu } href={'/sideMenu'}>
-                메뉴
+                <MenuOutlined />
             </Link>
             <Link className={ style.home } href={'/'}>
-                홈
+                <HomeOutlined />
             </Link>
             <div className={ style.mypage }>
-                마이페이지
+                <UserOutlined />
             </div>
-        </>
+        </div>
     )
 }
 

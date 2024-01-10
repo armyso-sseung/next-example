@@ -9,5 +9,6 @@
     -o-transition: left .3s;
     transition: left .3s;
     background: #fff;
-    color: #000
+    color: #000;
+    z-index: 1;
 }

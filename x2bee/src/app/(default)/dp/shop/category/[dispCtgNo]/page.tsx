@@ -1,6 +1,12 @@
-import {dehydrate, HydrationBoundary, QueryClient} from "@tanstack/react-query";
+"use client"
+
+
+import {useQuery} from "@tanstack/react-query";
 import {getCategoryShop} from "@/apis/display/categoryApi";
-import TestComponent from "@/app/(default)/dp/shop/category/[dispCtgNo]/_component/TestComponent";
+import DisplayTemplate from "@/component/display/template/DisplayTemplate";
+import BaseLoading from "@/app/(default)/_component/BaseLoading";
+import {CategoryShopType} from "../../../../../../../model/DisplayType";
+
 
 interface PropsType {
     params :{ dispCtgNo :string }
@@ -9,21 +15,26 @@ interface PropsType {
 
 const CategoryPage = ({ params } :PropsType) => {
     const { dispCtgNo } = params
-
-    const queryClient = new QueryClient()
-    queryClient.prefetchQuery({
+    const { data, isLoading, isSuccess } = useQuery({
         queryKey: ['display', 'shop', 'category', dispCtgNo],
         queryFn: () => getCategoryShop( dispCtgNo ),
+        staleTime: 3600 * 1000,
+        gcTime: 4000 * 1000
     })
 
-    const dehydrateState = dehydrate(queryClient)
-
+    if ( isLoading ) {
+        return null
+    }
 
     return (
         <>
-            <HydrationBoundary state={ dehydrateState }>
-                <TestComponent dispCtgNo={dispCtgNo} />
-            </HydrationBoundary>
+            <DisplayTemplate
+                tmplFileNm={data?.template.tmplFileNm}
+                shopInfo={data?.shopInfo}
+                categoryInfo={data?.categoryInfo}
+                template={data?.template || {}}
+                cornerList={data?.cornerList}
+            />
         </>
     )
 }

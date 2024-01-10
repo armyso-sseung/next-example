@@ -1,8 +1,14 @@
-const DispCategoryTemplate1 = () => {
+import {CategoryShopType} from "../../../../model/DisplayType";
+import style from "./dispCategoryTemplate1.module.css"
+
+
+const DispCategoryTemplate1 = ({ categoryInfo, template, cornerList } :CategoryShopType) => {
     return (
-        <main>
-            <h1>Category Template 1</h1>
-        </main>
+        <div>
+            <div className={ style.categoryTemplateTitle }>
+                <span>{ template.tmplNm }</span>
+            </div>
+        </div>
     )
 }
 
