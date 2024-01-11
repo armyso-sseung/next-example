@@ -1,5 +1,5 @@
 import {CategoryShopType} from "../../../../model/DisplayType";
-import style from "@/component/display/template/dispCategoryTemplate1.module.css";
+import style from "./categoryTemplate.module.css";
 
 
 const DispCategoryTemplate2 = ({ categoryInfo, template, cornerList } :CategoryShopType) => {

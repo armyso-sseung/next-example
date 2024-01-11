@@ -1,0 +1,12 @@
+.brandTemplateTitle {
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    align-items: center;
+    background: blue;
+}
+
+.brandTemplateTitle span {
+    font-size: 20pt;
+    color: #fff;
+}

@@ -1,0 +1,16 @@
+.brandTtile {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12pt;
+    cursor: pointer;
+}
+
+.dispBrandRoute {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    width: 30px;
+    height: 100%;
+    font-size: 9pt;
+}

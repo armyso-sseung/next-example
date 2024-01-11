@@ -1,15 +1,25 @@
 interface ShopInfoType {
-    shopNo: string,
-    shopTypCd: string,
-    dpmlNo: string,
-    dispShopNm: string,
-    dispSeq: string,
-    dispYn: string,
-    prtTypCd: string,
-    dispCtgNo: string,
-    shopDescCont: string
+    shopNo :string,
+    shopTypCd :string,
+    dpmlNo :string,
+    dispShopNm :string,
+    dispSeq :string,
+    dispYn :string,
+    prtTypCd :string,
+    shopDescCont :string
+    dispCtgNo ?:string,
+    brandNo ?:string,
 }
 
+interface BrandInfoType {
+    brandNo :string,
+    useYn :string,
+    brandImgPathNm :string,
+    brandImgFileNm :string,
+    brandNm :string,
+    brandDescCmt :string,
+    schKwdNm :string
+}
 
 interface CategoryInfoType {
     dispCtgNo: string,
@@ -78,9 +88,17 @@ interface BannerImageType {
 }
 
 export type CategoryShopType = {
-    tmplFileNm ?:string,
-    shopInfo ?:ShopInfoType,
     categoryInfo ?:CategoryInfoType,
-    template ?:TemplateType | undefined,
     cornerList ?:CornerType[]
+    shopInfo ?:ShopInfoType,
+    template ?:TemplateType | undefined,
+    tmplFileNm ?:string,
+}
+
+export type BrandShopType = {
+    brandInfo ?:BrandInfoType,
+    cornerList ?:CornerType[]
+    shopInfo ?:ShopInfoType,
+    template ?:TemplateType | undefined,
+    tmplFileNm ?:string,
 }

@@ -4,8 +4,6 @@
 import {useQuery} from "@tanstack/react-query";
 import {getCategoryShop} from "@/apis/display/categoryApi";
 import DisplayTemplate from "@/component/display/template/DisplayTemplate";
-import BaseLoading from "@/app/(default)/_component/BaseLoading";
-import {CategoryShopType} from "../../../../../../../model/DisplayType";
 
 
 interface PropsType {
