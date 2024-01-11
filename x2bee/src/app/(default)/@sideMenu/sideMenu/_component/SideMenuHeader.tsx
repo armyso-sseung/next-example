@@ -12,11 +12,11 @@ const SideMenuHeader = ({ title } :SideMenuHeaderType) => {
 
 
     const handleClickBackBtn = () => {
-        router.back()
+        router.replace("/sideMenu")
     }
 
     const handleClickCloseBtn = () => {
-        router.push("/")
+        router.back()
     }
 
 
