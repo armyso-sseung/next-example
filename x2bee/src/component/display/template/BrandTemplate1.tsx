@@ -1,12 +1,12 @@
-import {BrandShopType} from "../../../../model/DisplayType";
+import {ShopType} from "../../../../model/DisplayType";
 import style from "./brandTemplate.module.css"
 
 
-const BrandTemplate1 = ({ brandInfo, template, cornerList } :BrandShopType) => {
+const BrandTemplate1 = ({ brandInfo, template, cornerList } : ShopType) => {
     return (
         <div>
             <div className={ style.brandTemplateTitle }>
-                <span>{ template.tmplNm }</span>
+                <span>{ template?.tmplNm }</span>
             </div>
         </div>
     )

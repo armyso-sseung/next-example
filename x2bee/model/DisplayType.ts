@@ -87,18 +87,11 @@ interface BannerImageType {
     pcContFileNm: string
 }
 
-export type CategoryShopType = {
+export type ShopType = {
+    brandInfo ?:BrandInfoType,
     categoryInfo ?:CategoryInfoType,
     cornerList ?:CornerType[]
     shopInfo ?:ShopInfoType,
-    template ?:TemplateType | undefined,
-    tmplFileNm ?:string,
-}
-
-export type BrandShopType = {
-    brandInfo ?:BrandInfoType,
-    cornerList ?:CornerType[]
-    shopInfo ?:ShopInfoType,
-    template ?:TemplateType | undefined,
+    template ?:TemplateType,
     tmplFileNm ?:string,
 }
